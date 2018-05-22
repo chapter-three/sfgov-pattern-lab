@@ -23,3 +23,9 @@
 
 `$ composer install`
 
+### Generate Pattern Lab public instance.
+
+`$ php core/console --generate`
+
+### Using gulp.
+
