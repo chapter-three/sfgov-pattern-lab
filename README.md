@@ -23,6 +23,8 @@
 
 `$ composer install`
 
+`$ npm install`
+
 ### Generate Pattern Lab public instance.
 
 `$ php core/console --generate`
@@ -38,6 +40,10 @@ Only watches the twig template changes:
 `$ php core/console --watch`
 
 ### Using gulp.
+
+just run:
+
+`$ gulp`
 
 ### Documentation
 
