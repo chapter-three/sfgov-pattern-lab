@@ -22,17 +22,20 @@
   },
   "homepage": "https://github.com/chapter-three/sfgov-pattern-lab#readme",
   "dependencies": {
-    "uswds": "https://github.com/SFDigitalServices/uswds/archive/v1.6.2.tar.gz",
+    "bourbon": "^5.0.0",
+    "bourbon-neat": "^1.9.0",
     "browser-sync": "^2.24.4",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^4.0.1",
     "gulp-sass-glob": "^1.0.9",
     "gulp-scss-lint": "^0.6.1",
     "gulp-shell": "^0.6.5",
-    "gulp": "^3.9.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sourcemaps": "^2.4.0"
+    "gulp-sourcemaps": "^2.4.0",
+    "normalize.css": "^8.0.0",
+    "uswds": "https://github.com/SFDigitalServices/uswds/archive/v1.6.2.tar.gz"
   }
 }
