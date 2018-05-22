@@ -35,7 +35,8 @@
     "gulp-scss-lint": "^0.6.1",
     "gulp-shell": "^0.6.5",
     "gulp-sourcemaps": "^2.4.0",
-    "normalize.css": "^8.0.0",
+    "normalize-scss": "^7.0.1",
+    "normalize.scss": "^0.1.0",
     "uswds": "https://github.com/SFDigitalServices/uswds/archive/v1.6.2.tar.gz"
   }
 }

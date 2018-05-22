@@ -1,5 +1,7 @@
 // Import dependencies for USWDS.
 
+
+
 // Vendor -------------- //
 @import '../../../node_modules/uswds/src/stylesheets/core/variables-vendor';
 // instead of @import 'lib/bourbon'; the following:
@@ -12,8 +14,7 @@
 @import "../../../node_modules/bourbon-neat/app/assets/stylesheets/grid/*.scss";
 
 //@import 'lib/normalize';
-@import '../../../node_modules/normalize.css/normalize.css';
-
+@import '../../../node_modules/normalize.scss/normalize';
 
 // Core -------------- //
 $helvetica: 'Helvetica', sans-serif;
@@ -52,8 +53,6 @@ $georgia: 'Georgia', sans-serif;
 @import '../../../node_modules/uswds/src/stylesheets/components/section';
 @import '../../../node_modules/uswds/src/stylesheets/components/sidenav';
 @import '../../../node_modules/uswds/src/stylesheets/components/skipnav';
-
-
 
 // Styles inside patterns.
 
