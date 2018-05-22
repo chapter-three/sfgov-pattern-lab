@@ -39,3 +39,7 @@ Only watches the twig template changes:
 
 ### Using gulp.
 
+### Documentation
+
+- browserSync script tag added to `pattern-lab/source/_meta/00-head.twig`
+- link stylesheet from google Fonts added to `pattern-lab/source/_meta/00-head.twig`

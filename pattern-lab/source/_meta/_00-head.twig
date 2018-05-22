@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html class="{{ htmlClass }}">
-  <head>
+<head>
     <title>{{ title }}</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width"/>
 
     {#<link rel="stylesheet" href="../../css/style.css?{{ cacheBuster }}" media="all" />#}
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?{{ cacheBuster }}" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?{{ cacheBuster }}" media="all"/>
     <link rel="stylesheet" href="../../../../dist/css/uswds.css" media="all">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700|Montserrat|Open+Sans|Source+Sans+Pro" media="all">
+    {# todo: check if fonts are going to be selfhosted or not. #}
+    <link rel="stylesheet"
+          href="//fonts.googleapis.com/css?family=Merriweather:400,700|Montserrat|Open+Sans|Source+Sans+Pro:400,700"
+          media="all"/>
+    {# todo: remove this or validate if build is dev. #}
+    <script async src='http://localhost:3000/browser-sync/browser-sync-client.js?v=2.24.4'></script>
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
     {{ patternLabHead | raw }}
     <!-- End Pattern Lab -->
 
-  </head>
-  <body class="{{ bodyClass }}">
+</head>
+<body class="{{ bodyClass }}">
 

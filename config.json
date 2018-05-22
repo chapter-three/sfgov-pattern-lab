@@ -1,14 +1,16 @@
 {
   "name": "components",
-  "browserSyncProxy" : "https://sfgov.lndo.site/",
-  "bowerDir": "./bower_components",
+  "browserSync": {
+    "baseDir": "pattern-lab/public"
+  },
   "css": {
     "file" : "src/sass/_all.scss",
     "src": [
-      "src/sass/**/*.scss",
-      "pattern-lab/source/_patterns/**/*.scss"
+      "pattern-lab/source/_patterns/*.scss",
+      "pattern-lab/source/_patterns/**/*.scss",
+      "pattern-lab/source/scss/*.scss"
     ],
-    "dest": "dist/css",
+    "dest": "pattern-lab/public/css",
     "includePaths": []
   },
   "pattern_lab": {

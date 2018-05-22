@@ -2,6 +2,7 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var config = require('./config.json');
+
 // Include plugins.
 var sass = require('gulp-sass');
 var plumber = require('gulp-plumber');
@@ -94,15 +95,9 @@ gulp.task('watch', function() {
 // Static Server + Watch
 gulp.task('serve', ['css', 'watch', 'pl:generate'], function() {
   browserSync.init({
-    proxy: config.browserSyncProxy
+      serveStatic: ['./pattern-lab/public']
   });
 });
-
-// Run drush to clear the theme registry.
-// TODO: replace this with a pattern lab generate.
-gulp.task('drush', shell.task([
-  'drush cache-clear theme-registry'
-]));
 
 // Generate pl with PHP.
 gulp.task('pl:generate', shell.task('php pattern-lab/core/console --generate'));
