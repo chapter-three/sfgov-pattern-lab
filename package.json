@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/chapter-three/sfgov-pattern-lab/issues"
   },
-  "homepage": "https://github.com/chapter-three/sfgov-pattern-lab#readme"
+  "homepage": "https://github.com/chapter-three/sfgov-pattern-lab#readme",
+  "dependencies": {
+    "uswds": "https://github.com/SFDigitalServices/uswds/archive/v1.6.2.tar.gz"
+  }
 }
