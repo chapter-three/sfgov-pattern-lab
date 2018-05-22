@@ -27,5 +27,15 @@
 
 `$ php core/console --generate`
 
+#### Other commands:
+
+`$ php core/console --help`
+
+`$ php core/console --server`   
+
+Only watches the twig template changes:
+
+`$ php core/console --watch`
+
 ### Using gulp.
 
