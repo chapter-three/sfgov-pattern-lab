@@ -87,6 +87,7 @@ gulp.task('pl:scss', function() {
 // ----------------------------------------------------------------- //
 // copy images placed in src/img and compresses it an paste them in the
 // public PL directory.
+// todo: deprecate the following one once moved to drupal.
 // ----------------------------------------------------------------- //
 
 gulp.task('copyfiles', function() {
@@ -106,6 +107,7 @@ gulp.task('watch', function() {
   gulp.watch(config.css.src, ['css', 'pl:scss', 'pl:generate']);
   // gulp.watch(config.pattern_lab.src, ['pl:scss', 'pl:generate']);
   gulp.watch(config.pattern_lab.src, ['pl:generate', 'copyfiles']);
+  gulp.watch(config.pattern_lab.javascript.src, ['javascript', 'pl:generate']);
   gulp.watch(['src/img/*.{svg,gif,jpg,png}', 'src/img/**.*.{svg,gif,jpg,png}'], ['copyfiles', 'pl:generate']);
 });
 
@@ -127,12 +129,12 @@ gulp.task('pl:generate', shell.task('php pattern-lab/core/console --generate'));
 // TODO: implement the following one.
 // -------------------------------------------------------------------- //
 
-gulp.task('scss-lint', function() {
-  return gulp.src([config.css.src])
-    .pipe(scssLint())
-    .pipe(scssLint.format())
-    .pipe(scssLint.failOnError());
-});
+// gulp.task('scss-lint', function() {
+//   return gulp.src([config.css.src])
+//     .pipe(scssLint())
+//     .pipe(scssLint.format())
+//     .pipe(scssLint.failOnError());
+// });
 
 // Default Task
 // --------------------------------------------------------------------- //

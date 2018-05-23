@@ -16,8 +16,17 @@
   "pattern_lab": {
     "src": [
       "pattern-lab/source/_patterns/**/*.twig",
+      "pattern-lab/source/_meta/*.twig",
       "pattern-lab/source/_patterns/**/*.json"
-    ]
+    ],
+    "javascript": {
+      "src": [
+        "pattern-lab/source/js/*.js"
+      ],
+      "destination": [
+        "dist/js"
+      ]
+    }
   },
   "autoprefixer": [
     "last 2 versions",
