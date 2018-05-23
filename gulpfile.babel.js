@@ -79,7 +79,8 @@ gulp.task('css', () => {
         }))
         .pipe(autoprefix('last 2 versions', '> 1%', 'ie 9', 'ie 10'))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest(config.css.dest))
+        .pipe(gulp.dest(config.css.pattern_lab_destination))
+        .pipe(gulp.dest(config.css.dist_folder))
         .pipe(browserSync.reload({stream: true, match: '**/*.css'}));
 });
 
@@ -119,16 +120,15 @@ gulp.task('pl:scss', () => {
 // ------------------------------------------------------------------- //
 
 gulp.task('watch', function () {
-    gulp.watch(config.css.src, ['css', 'pl:scss', 'pl:generate']);
+    gulp.watch(config.css.src, ['pl:generate']);
     gulp.watch(config.pattern_lab.src, ['pl:generate']);
-    gulp.watch(config.pattern_lab.javascript.src, ['js:components']);
-    gulp.watch(['src/img/*.{svg,gif,jpg,png}', 'src/img/**.*.{svg,gif,jpg,png}'], ['copyfiles', 'pl:generate']);
+    gulp.watch(config.pattern_lab.javascript.src, ['pl:generate']);
 });
 
 // Static Server + Watch.
 // ------------------------------------------------------------------- //
 
-gulp.task('serve', ['css', 'js:components', 'watch', 'pl:generate'], () => {
+gulp.task('serve', ['pl:generate', 'watch'], () => {
     browserSync.init({
         serveStatic: ['./pattern-lab/public']
     });
@@ -137,12 +137,7 @@ gulp.task('serve', ['css', 'js:components', 'watch', 'pl:generate'], () => {
 // Generate pl with PHP.
 // -------------------------------------------------------------------- //
 
-gulp.task('pl:generate', () => shell.task('php pattern-lab/core/console --generate'));
-
-gulp.task('copyjs', () => {
-   return gulp.src('./dist/pl/js/*.js')
-       .pipe(gulp.dest('pattern-lab/public/js'));
-});
+gulp.task('pl:generate', ['uswds:javascript', 'css', 'js:components'], () => shell.task('php pattern-lab/core/console --generate'));
 
 // Component JS.
 // -------------------------------------------------------------------- //
