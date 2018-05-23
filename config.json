@@ -10,8 +10,7 @@
       "pattern-lab/source/_patterns/**/*.scss",
       "pattern-lab/source/scss/*.scss"
     ],
-    "dest": "pattern-lab/public/css",
-    "includePaths": []
+    "dest": "pattern-lab/public/css"
   },
   "pattern_lab": {
     "src": [
