@@ -38,5 +38,8 @@
     "normalize-scss": "^7.0.1",
     "normalize.scss": "^0.1.0",
     "uswds": "https://github.com/SFDigitalServices/uswds/archive/v1.6.2.tar.gz"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0"
   }
 }

@@ -1,8 +1,9 @@
 // Include gulp.
 var gulp = require('gulp');
+// Initialize browser sync.
 var browserSync = require('browser-sync').create();
+// Read the default configuration.
 var config = require('./config.json');
-
 // Include plugins.
 var sass = require('gulp-sass');
 var plumber = require('gulp-plumber');
@@ -14,7 +15,18 @@ var sourcemaps = require('gulp-sourcemaps');
 var scssLint = require('gulp-scss-lint');
 var shell = require('gulp-shell');
 
-// SASS.
+// Search for local configuration.
+try {
+    var local_config = require('./config.local.json');
+    config = _.merge(config, local_config);
+}
+catch (e) {
+    // Do nothing.
+}
+
+// CSS.
+// -------------------------------------------------------------- //
+
 gulp.task('css', function() {
   return gulp.src(config.css.src)
     .pipe(glob())
@@ -40,7 +52,12 @@ gulp.task('css', function() {
     .pipe(browserSync.reload({ stream: true, match: '**/*.css' }));
 });
 
-// Pattern lab css compilation.
+// Pattern lab CSS.
+// ----------------------------------------------------------------- //
+// Search for changes inside the pattern-lab/source/_patterns folders
+// the scss processor is going to compile scss files inside the components folders.
+// ----------------------------------------------------------------- //
+
 gulp.task('pl:scss', function() {
   return gulp.src(config.css.src, { base: './' })
     .pipe(glob())
@@ -67,9 +84,10 @@ gulp.task('pl:scss', function() {
 });
 
 // Image tasks
-//------------------------------------------------------------------------------
+// ----------------------------------------------------------------- //
 // copy images placed in src/img and compresses it an paste them in the
 // public PL directory.
+// ----------------------------------------------------------------- //
 
 gulp.task('copyfiles', function() {
   // Exclude the icon directory and its contents, explicitly name file types to
@@ -81,10 +99,9 @@ gulp.task('copyfiles', function() {
     .pipe(gulp.dest('pattern-lab/source/images'));
 });
 
-// ------------------------------------------------------------ //
-
-
 // Watch task.
+// ------------------------------------------------------------------- //
+
 gulp.task('watch', function() {
   gulp.watch(config.css.src, ['css', 'pl:scss', 'pl:generate']);
   // gulp.watch(config.pattern_lab.src, ['pl:scss', 'pl:generate']);
@@ -92,7 +109,9 @@ gulp.task('watch', function() {
   gulp.watch(['src/img/*.{svg,gif,jpg,png}', 'src/img/**.*.{svg,gif,jpg,png}'], ['copyfiles', 'pl:generate']);
 });
 
-// Static Server + Watch
+// Static Server + Watch.
+// ------------------------------------------------------------------- //
+
 gulp.task('serve', ['css', 'watch', 'pl:generate'], function() {
   browserSync.init({
       serveStatic: ['./pattern-lab/public']
@@ -100,9 +119,14 @@ gulp.task('serve', ['css', 'watch', 'pl:generate'], function() {
 });
 
 // Generate pl with PHP.
+// -------------------------------------------------------------------- //
+
 gulp.task('pl:generate', shell.task('php pattern-lab/core/console --generate'));
 
 // SCSS Linting.
+// TODO: implement the following one.
+// -------------------------------------------------------------------- //
+
 gulp.task('scss-lint', function() {
   return gulp.src([config.css.src])
     .pipe(scssLint())
@@ -111,4 +135,6 @@ gulp.task('scss-lint', function() {
 });
 
 // Default Task
+// --------------------------------------------------------------------- //
+
 gulp.task('default', ['serve']);
