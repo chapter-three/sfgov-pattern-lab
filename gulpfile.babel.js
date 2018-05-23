@@ -14,9 +14,13 @@ import glob from 'gulp-sass-glob';
 import rename from 'gulp-rename';
 import sourcemaps from 'gulp-sourcemaps';
 import shell from 'gulp-shell';
-// import concat from 'gulp-concat';
-// import uglify from 'gulp-uglify';
-// import babel from 'gulp-babel';
+import concat from 'gulp-concat';
+import uglify from 'gulp-uglify';
+import babel from 'gulp-babel';
+import fancylog from 'fancy-log';
+import browserify from 'browserify';
+import source from 'vinyl-source-stream';
+import buffer from 'vinyl-buffer';
 
 // Require a copy of the JS compiler for uswds.
 // the gulptask is called "javascript"
@@ -116,16 +120,15 @@ gulp.task('pl:scss', () => {
 
 gulp.task('watch', function () {
     gulp.watch(config.css.src, ['css', 'pl:scss', 'pl:generate']);
-    // gulp.watch(config.pattern_lab.src, ['pl:scss', 'pl:generate']);
-    gulp.watch(config.pattern_lab.src, ['pl:generate', 'copyfiles']);
-    gulp.watch(config.pattern_lab.javascript.src, ['javascript', 'pl:generate']);
+    gulp.watch(config.pattern_lab.src, ['pl:generate']);
+    gulp.watch(config.pattern_lab.javascript.src, ['js:components']);
     gulp.watch(['src/img/*.{svg,gif,jpg,png}', 'src/img/**.*.{svg,gif,jpg,png}'], ['copyfiles', 'pl:generate']);
 });
 
 // Static Server + Watch.
 // ------------------------------------------------------------------- //
 
-gulp.task('serve', ['css', 'watch', 'pl:generate'], function () {
+gulp.task('serve', ['css', 'js:components', 'watch', 'pl:generate'], () => {
     browserSync.init({
         serveStatic: ['./pattern-lab/public']
     });
@@ -134,40 +137,31 @@ gulp.task('serve', ['css', 'watch', 'pl:generate'], function () {
 // Generate pl with PHP.
 // -------------------------------------------------------------------- //
 
-gulp.task('pl:generate', shell.task('php pattern-lab/core/console --generate'));
+gulp.task('pl:generate', () => shell.task('php pattern-lab/core/console --generate'));
 
+gulp.task('copyjs', () => {
+   return gulp.src('./dist/pl/js/*.js')
+       .pipe(gulp.dest('pattern-lab/public/js'));
+});
 
-// Jacine:
-// uswds JS
-// gulp.task('js:theme', () => {
-//     return gulp.src('js/src/**/*.js')
-//         .pipe(sourcemaps.init())
-//         .pipe(babel())
-//         .on('error', errorHandler)
-//         .pipe(sourcemaps.write('.'))
-//         .pipe(gulp.dest('js/dist'))
-//         .pipe(browserSync.stream({match: '**/*.js'}));
-// });
-//
-//
-// // todo: fix this for phase 2.
-//
-// // Component JS.
-// gulp.task('js:components', () => {
-//     return gulp.src('components/**/*.js', {base: './'})
-//         .pipe(sourcemaps.init())
-//         .pipe(babel())
-//         .on('error', errorHandler)
-//         .pipe(sourcemaps.write('.'))
-//         .pipe(rename(function (path) {
-//             path.dirname = path.dirname.replace(/src/i, 'dist');
-//             return path;
-//         }))
-//         .pipe(sourcemaps.write('.'))
-//         .pipe(gulp.dest('.'))
-//         .pipe(browserSync.stream({match: '**/*.js'}));
-// });
+// Component JS.
+// -------------------------------------------------------------------- //
+// the following task concatenates all the javascript files inside the
+// _patterns folder, if new patterns need to be added the config.json array
+// needs to be edited to watch for more folders.
 
+gulp.task('js:components', () => {
+    return gulp.src(config.pattern_lab.javascript.src)
+        .pipe(sourcemaps.init())
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(concat("components.js"))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('./pattern-lab/public/js'))
+        .pipe(gulp.dest('./dist/pl/js'))
+        .pipe(browserSync.reload({stream: true, match: '**/*.js'}));
+});
 
 // Default Task
 // --------------------------------------------------------------------- //

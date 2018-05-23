@@ -24,7 +24,7 @@ gulp.task(task, function (done) {
   });
 
   var stream = defaultStream.bundle()
-    .pipe(source('uswds.js')) // XXX why is this necessary?
+    .pipe(source('uswds.js'))
     .pipe(buffer())
     .pipe(rename({ basename: 'uswds' }))
     .pipe(gulp.dest('dist/uswds/js'));

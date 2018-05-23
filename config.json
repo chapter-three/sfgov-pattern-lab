@@ -20,7 +20,10 @@
     ],
     "javascript": {
       "src": [
-        "pattern-lab/source/js/*.js"
+        "pattern-lab/source/js/components.js",
+        "pattern-lab/source/_patterns/01-atoms/**/*.js",
+        "pattern-lab/source/_patterns/02-molecules/**/*.js",
+        "pattern-lab/source/_patterns/03-organisms/**/*.js"
       ],
       "destination": [
         "dist/js"
