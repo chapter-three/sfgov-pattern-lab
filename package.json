@@ -55,6 +55,6 @@
     "gulp-sass-glob": "^1.0.9",
     "gulp-scss-lint": "^0.6.1",
     "gulp-shell": "^0.6.5",
-    "gulp-sourcemaps": "^2.4.0",
+    "gulp-sourcemaps": "^2.4.0"
   }
 }
