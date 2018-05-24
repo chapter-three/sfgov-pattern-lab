@@ -4,7 +4,7 @@
   "description": "SFGOV Pattern Lab library",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install": "php pattern-lab/core/console --generate"
   },
   "repository": {
     "type": "git",
@@ -25,18 +25,6 @@
     "bourbon": "^5.0.0",
     "bourbon-neat": "^1.9.0",
     "browser-sync": "^2.24.4",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-notify": "^3.2.0",
-    "gulp-plumber": "^1.2.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^4.0.1",
-    "gulp-sass-glob": "^1.0.9",
-    "gulp-scss-lint": "^0.6.1",
-    "gulp-shell": "^0.6.5",
-    "gulp-sourcemaps": "^2.4.0",
-    "jquery": "^3.3.1",
-    "normalize-scss": "^7.0.1",
     "normalize.scss": "^0.1.0",
     "uswds": "https://github.com/SFDigitalServices/uswds/archive/v1.6.2.tar.gz"
   },
@@ -57,6 +45,16 @@
     "gulp-eslint": "^4.0.2",
     "gulp-uglify": "^3.0.0",
     "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
+    "vinyl-source-stream": "^2.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^4.0.1",
+    "gulp-sass-glob": "^1.0.9",
+    "gulp-scss-lint": "^0.6.1",
+    "gulp-shell": "^0.6.5",
+    "gulp-sourcemaps": "^2.4.0",
   }
 }

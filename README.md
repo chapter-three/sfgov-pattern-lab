@@ -23,6 +23,13 @@
 
 `$ composer install`
 
+  answer the questions asked:
+  
+  - the path ./public/ already exists. merge or replace with the contents of pattern-lab/styleguidekit-assets-default package? `M`
+  - update the config option styleguideKitPath? `n`
+
+`$ php pattern-lab/core/console --generate`
+
 `$ npm install`
 
 ### Generate Pattern Lab public instance.
