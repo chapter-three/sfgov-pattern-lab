@@ -1,0 +1,42 @@
+{
+  "name": "components",
+  "browserSync": {
+    "baseDir": "pattern-lab/public"
+  },
+  "css": {
+    "file" : "src/sass/_all.scss",
+    "src": [
+      "pattern-lab/source/_patterns/*.scss",
+      "pattern-lab/source/_patterns/**/*.scss",
+      "pattern-lab/source/scss/*.scss"
+    ],
+    "pattern_lab_destination": "pattern-lab/public/css",
+    "dist_folder": "dist/css"
+  },
+  "pattern_lab": {
+    "src": [
+      "pattern-lab/source/_patterns/**/*.twig",
+      "pattern-lab/source/_meta/*.twig",
+      "pattern-lab/source/_patterns/**/*.json"
+    ],
+    "javascript": {
+      "src": [
+        "pattern-lab/source/js/components.js",
+        "pattern-lab/source/_patterns/01-atoms/**/*.js",
+        "pattern-lab/source/_patterns/02-molecules/**/*.js",
+        "pattern-lab/source/_patterns/03-organisms/**/*.js"
+      ],
+      "destination": [
+        "dist/js"
+      ]
+    }
+  },
+  "autoprefixer": [
+    "last 2 versions",
+    "> 1%",
+    "ie 11"
+  ],
+  "sass": {
+    "outputStyle": "expanded"
+  }
+}
