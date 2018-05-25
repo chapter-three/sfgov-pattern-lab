@@ -137,7 +137,7 @@ gulp.task('serve', ['pl:generate', 'watch'], () => {
 // Generate pl with PHP.
 // -------------------------------------------------------------------- //
 
-gulp.task('pl:generate', ['uswds:javascript', 'css', 'js:components'], () => shell.task('php pattern-lab/core/console --generate'));
+gulp.task('pl:generate', ['uswds:javascript', 'css', 'js:components'], shell.task('php pattern-lab/core/console --generate'));
 
 // Component JS.
 // -------------------------------------------------------------------- //

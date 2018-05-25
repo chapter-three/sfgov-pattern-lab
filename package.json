@@ -26,6 +26,7 @@
     "bourbon-neat": "^1.9.0",
     "browser-sync": "^2.24.4",
     "normalize.scss": "^0.1.0",
+    "susy": "^3.0.5",
     "uswds": "https://github.com/SFDigitalServices/uswds/archive/v1.6.2.tar.gz"
   },
   "devDependencies": {
