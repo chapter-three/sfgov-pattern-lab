@@ -8,7 +8,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var rename = require('gulp-rename');
 var eslint = require('gulp-eslint');
 var fancylog = require('fancy-log');
-var task = 'uswds:javascript';
+var task = 'uswds:js';
 
 gulp.task(task, function (done) {
 

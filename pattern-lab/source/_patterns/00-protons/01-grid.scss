@@ -1,13 +1,72 @@
 @import "../../../../node_modules/susy/sass/susy-prefix";
+@import "../../../../node_modules/susy/sass/plugins/svg-grid";
+
+$mobile-screen: 480px;
+$medium-screen: 769px;
+$narrow-screen: 950px;
+$wide-screen: 1220px;
 
 // Basic grid settings.
 $susy: (
   'columns': susy-repeat(12),
-  'gutters': 12px,
+  'gutters': 14px,
   'spread': 'narrow',
   'container-spread': 'narrow'
 );
 
 .sfgov-container {
+  padding-left: susy-gutter() / 2;
+  padding-right: susy-gutter() / 2;
+  @media all and (min-width: $narrow-screen) {
+    width: 949px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  @media all and (min-width: $wide-screen) {
+    width: 1195px;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
 
+.sfgov-width-one-whole {
+  width: susy-span(12 of 12);
+}
+.sfgov-width-one-half {
+  width: susy-span(6 wide of 12 wide);
+  float: left;
+}
+.sfgov-width-one-third {
+  width: susy-span(4 wide of 12 wide);
+  float: left;
+}
+.sfgov-width-one-fourth {
+  width: susy-span(3 wide of 12 wide);
+  float: left;
+}
+.sfgov-width-one-sixth {
+  width: susy-span(2 wide of 12 wide);
+  float: left;
+}
+.sfgov-width-one-twelfth {
+  width: susy-span(1 wide of 12 wide);
+  float: left;
+}
+
+.grid-example {
+  color: #fff;
+  .sfgov-grid {
+    background: svg-grid() no-repeat scroll;
+    .sfgov-width-one-whole,
+    .sfgov-width-one-half,
+    .sfgov-width-one-third,
+    .sfgov-width-one-fourth,
+    .sfgov-width-one-sixth,
+    .sfgov-width-one-twelfth {
+      background: #60585c;
+      padding: 10px;
+      text-align: center;
+      border: 1px dotted #e1f3f8;
+    }
+  }
 }
