@@ -5,11 +5,17 @@
   flex-direction: row;
   flex-wrap: no-wrap;
   align-items: stretch;
+  .sfgov-logo__image {
+    min-width: 55px;
+    display: flex;
+    align-content: center;
+  }
   .sfgov-logo__text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-left: 14px;
+    min-width: 95px;
     .sfgov-logo__text--pre-title {
       font-family: "Helvetica", sans-serif;
       font-size: 10px;
