@@ -32,25 +32,57 @@ $susy: (
 .sfgov-width-one-whole {
   width: susy-span(12 of 12);
 }
+
 .sfgov-width-one-half {
   width: susy-span(6 wide of 12 wide);
   float: left;
+  @media all and (max-width: $medium-screen) {
+    width: 100%;
+    float: inherit;
+  }
 }
+
 .sfgov-width-one-third {
   width: susy-span(4 wide of 12 wide);
   float: left;
+  @media all and (max-width: $medium-screen) {
+    width: 100%;
+    float: inherit;
+  }
 }
+
 .sfgov-width-one-fourth {
   width: susy-span(3 wide of 12 wide);
   float: left;
+  @media all and (max-width: $medium-screen) {
+    width: 100%;
+    float: inherit;
+  }
 }
+
 .sfgov-width-one-sixth {
   width: susy-span(2 wide of 12 wide);
   float: left;
+  @media all and (max-width: $medium-screen) {
+    width: susy-span(4 wide of 12 wide);
+    float: left;
+  }
+  @media all and (max-width: $mobile-screen) {
+    width: 100%;
+    float: inherit;
+  }
 }
 .sfgov-width-one-twelfth {
   width: susy-span(1 wide of 12 wide);
   float: left;
+  @media all and (max-width: $medium-screen) {
+    width: susy-span(4 wide of 12 wide);
+    float: left;
+  }
+  @media all and (max-width: $mobile-screen) {
+    width: 100%;
+    float: inherit;
+  }
 }
 
 .grid-example {
