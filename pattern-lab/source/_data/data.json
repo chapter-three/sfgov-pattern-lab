@@ -6,6 +6,10 @@
   "branding_logo_url": "../../images/sf-logo.svg",
   "branding_logo_alt": "alt text",
   "alpha_banner_message": "This site is in progress. Visit <a href=\"#\">sfgov.org</a> for the current.",
+  "blocks": {
+    "head_text": "This is a new website for San Francisco",
+    "body_text": "Do you have ideas or feedback on the new website? It's still in progress, and we'd love to know how we can make it better. <a href=\"#\">Learn more about the website project</a>"
+  },
   "main_navigation": [
     {
       "label": "Services",
