@@ -1,9 +1,13 @@
 @import "../../00-protons/01-grid";
+@import "../../00-protons/00-breakpoints";
 
 .sfgov-new-website {
   background-color: #F2F2F2;
-  padding: 12px susy-span(1 wide of 12 wide) 70px;
-  width: susy-span(10 wide of 12 wide);
+  padding: 12px susy-gutter()/2 35px;
+  @media all and (min-width: $medium-screen){
+    padding: 12px susy-span(1 wide of 12 wide) 70px;
+    width: susy-span(10 wide of 12 wide);
+  }
   h2 {
     color: #122E51;
     padding: 15px 0;
