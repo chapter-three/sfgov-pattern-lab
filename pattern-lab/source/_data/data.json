@@ -20,6 +20,24 @@
       "link": "#"
     }
   ],
+  "tabbed_navigation": [
+    {
+      "label": "View",
+      "link": "#"
+    },
+    {
+      "label": "Edit",
+      "link": "#"
+    },
+    {
+      "label": "Delete",
+      "link": "#"
+    },
+    {
+      "label": "Revisions",
+      "link": "#"
+    }
+  ],
   "homepage": {
     "hero_banners": [
       {
