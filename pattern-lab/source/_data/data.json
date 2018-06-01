@@ -38,15 +38,10 @@
       "link": "#"
     }
   ],
-  "homepage": {
-    "hero_banners": [
-      {
-        "title": "City and County of San Francisco",
-        "text": "Your guide to city information and services",
-        "date": "10250045"
-      }
-    ]
-
+  "banner": {
+    "title": "City and County of San Francisco",
+    "text": "Your guide to city information and services",
+    "date": "10250045"
   },
   "footer": {
     "image_url": "../../images/sf-logo-white.svg",

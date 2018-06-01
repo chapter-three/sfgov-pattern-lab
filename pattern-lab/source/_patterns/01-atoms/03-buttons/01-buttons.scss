@@ -243,3 +243,29 @@ html .sfgov-button-secondary-inverse-disabled,  // Deprecated
 .sfgov-button-unstyled {
   @include button-unstyled;
 }
+
+.sfgov-cta-button__container {
+  a {
+    @include font-smoothing;
+    @include source-sans-pro;
+    margin: 0.5em 0.5em 0.5em 0;
+    appearance: none;
+    background-color: $color-green;
+    border: 0;
+    border-radius: $button-border-radius;
+    color: $color-white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: $base-font-size;
+    font-weight: $font-bold;
+    line-height: 1;
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+
+    @include media($mobile-screen) {
+      width: auto;
+    }
+  }
+}
