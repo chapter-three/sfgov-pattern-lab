@@ -29,6 +29,19 @@ $susy: (
   }
 }
 
+.sfgov-container--full {
+  @media all and (min-width: $narrow-screen) {
+    width: 949px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  @media all and (min-width: $wide-screen) {
+    width: 1195px;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
 .sfgov-width-one-whole {
   width: susy-span(12 of 12);
 }

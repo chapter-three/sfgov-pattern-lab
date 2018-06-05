@@ -1,4 +1,5 @@
 @import "../../01-atoms/02-typography/01-fonts.scss";
+@import "../../00-protons/00-breakpoints";
 
 .sfgov-banner {
   // todo: add this color to the styleguide.
@@ -8,6 +9,11 @@
     padding: 42px 0 53px 0;
     display: flex;
     flex-direction: column;
+    @media all and (max-width: $medium-screen){
+      margin-left: susy-gutter() / 2;
+      margin-right: susy-gutter() / 2;
+    }
+
   }
   h1 {
     // todo: add this color to the styleguide.
