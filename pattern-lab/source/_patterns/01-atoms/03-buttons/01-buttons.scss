@@ -262,10 +262,6 @@ html .sfgov-button-secondary-inverse-disabled,  // Deprecated
     padding: 1rem 2rem;
     text-align: center;
     text-decoration: none;
-    width: 100%;
-
-    @include media($mobile-screen) {
-      width: auto;
-    }
+    width: auto;
   }
 }
