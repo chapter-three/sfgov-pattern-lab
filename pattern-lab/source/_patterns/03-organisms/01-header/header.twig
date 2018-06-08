@@ -1,10 +1,11 @@
 <header role="banner">
-  <div class="sfgov-container sfgov-nav-container">
+  <div class="sfgov-container--full sfgov-nav-container">
     <div class="sfgov-nav-container__content">
       {% if pl_test_content %}
         {% include "molecules-branding" %}
         {% include "molecules-main-navigation" %}
       {% endif %}
+      <button class="sfgov-menu-btn">Menu</button>
       {{ header_blocks }}
     </div>
   </div>

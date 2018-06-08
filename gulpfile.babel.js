@@ -11,16 +11,10 @@ import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import autoprefix from 'gulp-autoprefixer';
 import glob from 'gulp-sass-glob';
-import rename from 'gulp-rename';
 import sourcemaps from 'gulp-sourcemaps';
 import shell from 'gulp-shell';
 import concat from 'gulp-concat';
-import uglify from 'gulp-uglify';
 import babel from 'gulp-babel';
-import fancylog from 'fancy-log';
-import browserify from 'browserify';
-import source from 'vinyl-source-stream';
-import buffer from 'vinyl-buffer';
 
 // Require a copy of the JS compiler for uswds.
 // the gulptask is called "javascript"
@@ -83,42 +77,11 @@ gulp.task('pl:css', () => {
         .pipe(browserSync.reload({stream: true, match: '**/*.css'}));
 });
 
-// Pattern lab CSS.
-// ----------------------------------------------------------------- //
-// Search for changes inside the pattern-lab/source/_patterns folders
-// the scss processor is going to compile scss files inside the components folders.
-// ----------------------------------------------------------------- //
-//
-// gulp.task('pl:scss', () => {
-//     return gulp.src(config.css.src, {base: './'})
-//         .pipe(glob())
-//         .pipe(plumber({
-//             errorHandler: function (error) {
-//                 notify.onError({
-//                     title: "Gulp",
-//                     subtitle: "Failure!",
-//                     message: "Error: <%= error.message %>",
-//                     sound: "Beep"
-//                 })(error);
-//                 this.emit('end');
-//             }
-//         }))
-//         .pipe(sourcemaps.init())
-//         .pipe(sass(config.sass))
-//         .pipe(autoprefix(config.autoprefixer))
-//         .pipe(rename(function (path) {
-//             path.dirname = path.dirname.replace(/src/i, 'dist');
-//             return path;
-//         }))
-//         .pipe(sourcemaps.write('.'))
-//         .pipe(gulp.dest('.'))
-//         .pipe(browserSync.reload({stream: true, match: '**/*.css'}));
-// });
-
 // Watch task.
 // ------------------------------------------------------------------- //
 
 gulp.task('watch', function () {
+    gulp.watch(config.js.src, ['legacy:js']);
     gulp.watch(config.css.src, ['pl:css']);
     gulp.watch(config.pattern_lab.src, ['generate:pl']);
     gulp.watch(config.pattern_lab.javascript.src, ['generate:pl']);
@@ -134,7 +97,7 @@ gulp.task('serve', ['watch', 'generate:pl'], () => {
 });
 
 // generate Pattern library.
-gulp.task('generate:pl', ['pl:php', 'uswds:js', 'pl:css', 'pl:js' ]);
+gulp.task('generate:pl', ['pl:php', 'legacy:js', 'pl:css', 'pl:js' ]);
 
 // Generate pl with PHP.
 // -------------------------------------------------------------------- //

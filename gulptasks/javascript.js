@@ -8,14 +8,15 @@ var sourcemaps = require('gulp-sourcemaps');
 var rename = require('gulp-rename');
 var eslint = require('gulp-eslint');
 var fancylog = require('fancy-log');
-var task = 'uswds:js';
+var task = 'legacy:js';
 
 gulp.task(task, function (done) {
 
   fancylog('Compiling JavaScript');
 
   var defaultStream = browserify({
-    entries: './node_modules/uswds/src/js/start.js',
+    // entries: './node_modules/uswds/src/js/start.js',
+    entries: './pattern-lab/source/js/start.js',
     debug: true,
   })
   .transform('babelify', {
@@ -37,7 +38,8 @@ gulp.task(task, function (done) {
       suffix: '.min',
     }))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('dist/uswds/js'));
+    .pipe(gulp.dest('dist/uswds/js'))
+    .pipe(gulp.dest('pattern-lab/public/js/dist'));
 
   return stream;
 

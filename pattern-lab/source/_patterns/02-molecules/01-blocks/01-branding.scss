@@ -1,14 +1,24 @@
 @import "../../01-atoms/02-typography/01-fonts.scss";
+@import "../../00-protons/00-breakpoints";
 
 .sfgov-logo {
   display: inline-flex;
   flex-direction: row;
   flex-wrap: no-wrap;
   align-items: stretch;
+  @media all and (max-width: $narrow-screen) {
+    padding-left: 14px;
+  }
   .sfgov-logo__image {
     min-width: 55px;
     display: flex;
     align-content: center;
+    @media all and (max-width: $narrow-screen) {
+      min-width: 40px;
+      img {
+        max-width: 40px;
+      }
+    }
   }
   .sfgov-logo__text {
     display: flex;
