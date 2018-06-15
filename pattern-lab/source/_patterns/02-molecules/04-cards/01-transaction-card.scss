@@ -1,0 +1,18 @@
+.transaction-card {
+  background-color: #f1f1f1;
+  padding: 20px 18px 42px;
+  &:hover {
+    background-color: #0071bc;
+    a {
+      color: #fff;
+    }
+    .transaction-card__body {
+      color: #fff;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: #0071bc;
+  }
+
+}

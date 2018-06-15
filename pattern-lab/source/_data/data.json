@@ -274,5 +274,10 @@
     "long": "20",
     "short": "20"
   },
-  "seconds": "31"
+  "seconds": "31",
+  "transaction_card": {
+    "title": "Affordable Housing",
+    "body": "Donec mollis hendrerit risus. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Donec id justo. Pellentesque posuere."
+  }
+
 }

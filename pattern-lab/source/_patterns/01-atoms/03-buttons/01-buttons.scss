@@ -1,5 +1,5 @@
 // Buttons variables
-
+@import "../../00-protons/01-grid";
 @import "../01-colors/01-colors.scss";
 @import "../../00-protons/00-breakpoints.scss";
 @import "../../01-atoms/02-typography/01-fonts.scss";
@@ -23,20 +23,11 @@ $font-normal: 400 !default;
   }
 }
 
-@mixin media($bp) {
-  @media screen and (min-width: #{$bp}) {
-    @content;
-  }
-}
+// Mixins for easy use with other scss files.
 
-// Buttons
-
-// This mixin is only needed until we fully remove the
-// deprecated usa-button-disabled style.
 @mixin disabledesque {
   background-color: $color-gray-lighter;
   pointer-events: none;
-
   &:hover,
   &.usa-button-hover,
   &:active,
@@ -49,7 +40,127 @@ $font-normal: 400 !default;
   }
 }
 
-/* stylelint-disable selector-no-qualifying-type */
+@mixin button-unstyled {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  font-weight: $font-normal;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  -webkit-font-smoothing: auto;
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+// The default button:
+
+@mixin sfgov-button() {
+  @include font-smoothing;
+  @include source-sans-pro;
+  margin: 0.5em 0.5em 0.5em 0;
+  background-color: $color-primary;
+  border: 0;
+  border-radius: $button-border-radius;
+  color: $color-white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $base-font-size;
+  font-weight: $font-bold;
+  line-height: 1;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  @include media($mobile-screen) {
+    width: auto;
+  }
+  &:hover {
+    background-color: $color-primary-darker;
+    border-bottom: 0;
+    color: $color-white;
+    text-decoration: none;
+  }
+  &:active {
+    background-color: $color-primary-darkest;
+  }
+}
+
+@mixin sfgov-button-primary-alt() {
+  @include sfgov-button;
+  background-color: $color-primary-alt;
+  color: $color-base;
+  &:hover {
+    background-color: $color-primary-alt-dark;
+  }
+  &:active {
+    background-color: $color-primary-alt-darkest;
+    color: $color-white;
+  }
+}
+
+
+@mixin sfgov-button-secondary() {
+  @include sfgov-button;
+  background-color: $color-white;
+  box-shadow: $button-stroke $color-primary;
+  color: $color-primary;
+  &:hover {
+    box-shadow: $button-stroke $color-primary-darker;
+    color: #fff;
+  }
+  &:active {
+    box-shadow: $button-stroke $color-primary-darkest;
+    color: $color-primary-darkest;
+  }
+}
+
+@mixin sfgov-button-secondary-inverse() {
+  background: transparent;
+  box-shadow: $button-stroke $color-white;
+  color: $color-white;
+  &:hover {
+    box-shadow: $button-stroke $color-gray-lighter;
+    color: $color-gray-lighter;
+  }
+  &:active {
+    box-shadow: $button-stroke $color-gray-light;
+    color: $color-gray-lighter;
+  }
+}
+
+@mixin sfgov-button-gray {
+  @include sfgov-button;
+  background-color: $color-gray;
+  &:hover {
+    background-color: $color-gray-dark;
+  }
+  &:active {
+    background-color: $color-base;
+  }
+}
+
+@mixin sfgov-button-red {
+  @include sfgov-button;
+  background-color: $color-secondary;
+  &:hover {
+    background-color: $color-secondary-dark;
+  }
+  &:active {
+    background-color: $color-secondary-darkest;
+  }
+}
+
+@mixin sfgov-button-big {
+  @include sfgov-button;
+  border-radius: 8px;
+  font-size: 2.4rem;
+  padding: 1.5rem 3rem;
+}
+
+// Using as class.
+
 .usa-button,
 .usa-button-primary,
 .usa-button:visited,
@@ -185,15 +296,12 @@ button,
     @include disabledesque;
   }
 }
-/* stylelint-disable */
 
 .sfgov-button-disabled  // Deprecated
 {
   @include disabledesque
 }
 
-.sfgov-button-secondary-disabled,          // Deprecated
-.sfgov-button-secondary-inverse-disabled,  // Deprecated
 .sfgov-button-secondary:disabled,
 .sfgov-button-secondary-inverse:disabled,
 .sfgov-button-outline-inverse:disabled {   // Outline inverse to be deprecated in 2.0
@@ -212,36 +320,21 @@ button,
   }
 }
 
-html .sfgov-button-secondary-disabled,          // Deprecated
 .sfgov-button-secondary:disabled {
   background-color: $color-white;
 }
 
-html .sfgov-button-secondary-inverse-disabled,  // Deprecated
 .sfgov-button-secondary-inverse:disabled {
   background-color: transparent;
   color: $color-gray;
   box-shadow: $button-stroke $color-gray;
 }
 
-@mixin button-unstyled {
-  background-color: transparent;
-  border: 0;
-  border-radius: 0;
-  font-weight: $font-normal;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  -webkit-font-smoothing: auto;
-
-  &:hover {
-    background-color: transparent;
-  }
-}
-
 .sfgov-button-unstyled {
   @include button-unstyled;
 }
+
+// Sfgov specific styles.
 
 .sfgov-cta-button__container {
   a {
