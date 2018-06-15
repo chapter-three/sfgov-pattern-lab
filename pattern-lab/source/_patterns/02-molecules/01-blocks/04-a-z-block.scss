@@ -11,11 +11,12 @@
     color: #205493;
   }
   a {
-    &:first-child {
-      @include sfgov-button-secondary;
-    }
+    @include sfgov-button-secondary;
   }
   ul {
     padding-left: 0;
+  }
+  .sfgov-tabbed-navigation ul li a {
+    padding: 12px 15px;
   }
 }

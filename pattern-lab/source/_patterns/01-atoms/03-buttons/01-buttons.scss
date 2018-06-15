@@ -114,6 +114,10 @@ $font-normal: 400 !default;
     box-shadow: $button-stroke $color-primary-darkest;
     color: $color-primary-darkest;
   }
+  &.is-active {
+    background-color: #0071bc !important;
+    color: #fff;
+  }
 }
 
 @mixin sfgov-button-secondary-inverse() {
