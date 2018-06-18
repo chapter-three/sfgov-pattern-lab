@@ -278,6 +278,31 @@
   "transaction_card": {
     "title": "Affordable Housing",
     "body": "Donec mollis hendrerit risus. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Donec id justo. Pellentesque posuere."
-  }
-
+  },
+  "alerts": [
+    {
+      "type": "success",
+      "role": "success",
+      "title": "Success Status",
+      "content": "Donec mollis hendrerit risus. Sed consequat, leo eget bibendum sodales, augue <a href=\"#\">velit cursus</a> nunc, quis gravida magna"
+    },
+    {
+      "type": "warning",
+      "role": "warning",
+      "title": "Warning Status",
+      "content": "Donec mollis hendrerit risus. Sed consequat, leo eget bibendum sodales, augue <a href=\"#\">velit cursus</a> nunc, quis gravida magna"
+    },
+    {
+      "type": "error",
+      "role": "error",
+      "title": "Error Status",
+      "content": "Donec mollis hendrerit risus. Sed consequat, leo eget bibendum sodales, augue <a href=\"#\">velit cursus</a> nunc, quis gravida magna"
+    },
+    {
+      "type": "info",
+      "role": "info",
+      "title": "Information Status",
+      "content": "Donec mollis hendrerit risus. Sed consequat, leo eget bibendum sodales, augue <a href=\"#\">velit cursus</a> nunc, quis gravida magna"
+    }
+  ]
 }
