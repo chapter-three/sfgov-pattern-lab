@@ -145,8 +145,9 @@ $hit-area: 4.4rem;
   overflow-y: auto;
   padding: 2rem;
   width: $sliding-panel-width;
-  z-index: $z-index-nav;
-
+  @media screen and (max-width: $narrow-screen) {
+    z-index: $z-index-nav;
+  }
   @media all and (min-width: $narrow-screen + 1) {
     padding: 0;
     border-left: none;
