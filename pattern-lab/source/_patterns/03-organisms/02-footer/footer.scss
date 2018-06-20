@@ -1,10 +1,11 @@
+@import "../../01-atoms/01-colors/01-colors";
+
 .sfgov-footer__container {
   .sfgov-footer__top {
-    background: #5b616b;
+    background: $color-gray;
   }
   .sfgov-footer__bottom {
-    background: #323a45;
-
+    background: $color-gray-dark;
     padding: 22px 0 24.4px 0;
     .sfgov-container {
       display: flex;
@@ -13,7 +14,7 @@
     }
     .text {
       font-family: "Merriweather", sans-serif;
-      color: #fff;
+      color: $color-white;
       font-weight: bold;
       font-size: 20px;
       line-height: 25px;
@@ -21,7 +22,7 @@
     }
     .logo {
       img {
-        fill: #fff;
+        fill: $color-white;
       }
     }
   }

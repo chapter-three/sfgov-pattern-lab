@@ -1,19 +1,20 @@
 @import "../../01-atoms/02-typography/01-fonts.scss";
+@import "../../01-atoms/01-colors/01-colors.scss";
 @import "../../00-protons/00-breakpoints";
 
 .sfgov-footer-navigation {
-  @media all and (min-width: $narrow-screen) {
+  @include media($narrow-screen) {
     width: 949px;
     margin: 0 auto;
     padding: 0;
   }
-  @media all and (min-width: $wide-screen) {
+  @include media($wide-screen) {
     width: 1195px;
     margin: 0 auto;
     padding: 0;
   }
   ul {
-    @media all and (max-width: $medium-screen + 1) {
+    @include media-max($medium-screen - 1) {
       &::after,
       &::before {
         content: '';
@@ -24,14 +25,14 @@
     padding: 0;
     margin: 0;
     li {
-      @media all and (max-width: $medium-screen - 1) {
-        border-top: 1px solid #212121;
+      @include media-max($medium-screen - 1) {
+        border-top: 1px solid $color-black-light;
         border-bottom: 0;
         &:last-child {
-          border-bottom: 1px solid #212121;
+          border-bottom: 1px solid $color-black-light;
         }
       }
-      @media all and (min-width: $medium-screen) {
+      @include media($medium-screen) {
         display: inline-block;
       }
       padding: 15px 40px 15px 15px;
@@ -39,8 +40,7 @@
       a {
         @include source-sans-pro;
         font-size: 17px;
-        // todo: add color to colors atom.
-        color: #fff;
+        color: $color-white;
         line-height: 22px;
         font-weight: bold;
         text-decoration: none;

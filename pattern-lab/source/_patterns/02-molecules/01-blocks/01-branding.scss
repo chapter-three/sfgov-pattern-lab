@@ -1,5 +1,5 @@
+@import "../../01-atoms/01-colors/01-colors.scss";
 @import "../../01-atoms/02-typography/01-fonts.scss";
-@import "../../00-protons/00-breakpoints";
 @import "../../00-protons/01-grid";
 
 .sfgov-logo {
@@ -7,14 +7,15 @@
   flex-direction: row;
   flex-wrap: no-wrap;
   align-items: stretch;
-  @media all and (max-width: $narrow-screen) {
+
+  @include media($narrow-screen) {
     padding-left: 14px;
   }
   .sfgov-logo__image {
     min-width: 55px;
     display: flex;
     align-content: center;
-    @media all and (max-width: $narrow-screen) {
+    @include media($narrow-screen) {
       min-width: 40px;
       img {
         max-width: 40px;
@@ -31,8 +32,7 @@
       font-family: "Helvetica", sans-serif;
       font-size: 10px;
       line-height: 12px;
-      // todo: replace this color with a variable.
-      color: #212121;
+      color: $color-black-light;
     }
     .sfgov-logo__text--title {
       @include merriweather;
@@ -41,7 +41,7 @@
       line-height: 26px;
       a {
         text-decoration: none;
-        color: #212121;
+        color: $color-black-light;
       }
     }
   }

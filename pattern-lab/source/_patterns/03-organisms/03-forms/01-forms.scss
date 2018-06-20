@@ -1,18 +1,17 @@
 @import "../../00-protons/01-grid";
-@import "../../00-protons/00-breakpoints";
 
 .sfgov-search-form {
   display: flex;
   flex-direction: row;
   .js-form-type-textfield {
     width: susy-span(8 wide of 12 wide);
-    @media all and (min-width: $medium-screen) {
+    @include media($medium-screen) {
       width: susy-span(7 wide of 12 wide);
     }
   }
   .form-actions {
     width: susy-span(4 wide of 12 wide);
-    @media all and (min-width: $medium-screen) {
+    @include media($medium-screen) {
       width: susy-span(3 wide of 12 wide);
     }
   }
@@ -28,7 +27,7 @@
     margin: 0;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
-    @media all and (min-width: $medium-screen) {
+    @include media($medium-screen) {
       width: 80%;
     }
   }

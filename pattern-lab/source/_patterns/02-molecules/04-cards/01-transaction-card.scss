@@ -1,18 +1,20 @@
+@import "../../01-atoms/01-colors/01-colors";
+
 .transaction-card {
-  background-color: #f1f1f1;
+  background-color: $color-gray-lightest;
   padding: 20px 18px 42px;
   &:hover {
-    background-color: #0071bc;
+    background-color: $color-blue;
     a {
-      color: #fff;
+      color: $color-white;
     }
     .transaction-card__body {
-      color: #fff;
+      color: $color-white;
     }
   }
   a {
     text-decoration: none;
-    color: #0071bc;
+    color: $color-blue;
   }
 
 }

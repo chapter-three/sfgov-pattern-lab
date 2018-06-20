@@ -1,15 +1,15 @@
+@import "../../01-atoms/01-colors/01-colors.scss";
 @import "../../00-protons/01-grid";
-@import "../../00-protons/00-breakpoints";
 
 .sfgov-new-website {
-  background-color: #F2F2F2;
+  background-color: $color-gray-lightest;
   padding: 12px susy-gutter()/2 35px;
-  @media all and (min-width: $medium-screen){
+  @include media($medium-screen){
     padding: 12px susy-span(1 wide of 12 wide) 70px;
   }
   h2 {
-    color: #122E51;
-    padding: 15px 0;
+    color: $color-blue-darkest;
+    padding: 1.5rem 0;
     margin: 0;
   }
 }

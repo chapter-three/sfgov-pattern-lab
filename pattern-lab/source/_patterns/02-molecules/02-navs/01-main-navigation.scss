@@ -1,8 +1,8 @@
 @import "../../01-atoms/02-typography/01-fonts.scss";
-@import "../../00-protons/00-breakpoints";
 @import "../../01-atoms/01-colors/01-colors";
 @import "../../01-atoms/03-buttons/01-buttons";
 @import "../../00-protons/02-mixins";
+@import "../../00-protons/01-grid";
 
 $site-max-width: 1040px;
 $z-index-header:  7000;
@@ -18,8 +18,7 @@ $hit-area: 4.4rem;
       a {
         @include source-sans-pro;
         font-size: 15px;
-        // todo: add color to colors atom.
-        color: #323a45;
+        color: $color-blue-darkest;
         line-height: 19px;
         font-weight: bold;
         text-decoration: none;
@@ -50,9 +49,13 @@ $hit-area: 4.4rem;
   width: 5.8rem;
   min-height: 60px;
 
-  @media all and (min-width: $narrow-screen) {
+  @include media($narrow-screen) {
     display: none;
     min-height: initial;
+  }
+
+  @include media-max($narrow-screen) {
+    margin-right: 10px;
   }
 
   &:hover {
@@ -93,7 +96,7 @@ $hit-area: 4.4rem;
   border-bottom: 1px solid $color-gray-light;
   height: 4rem;
 
-  @media all and (min-width: $narrow-screen + 1) {
+  @include media($narrow-screen + 1) {
     border-bottom: none;
     display: inline-block;
     height: 7.8rem;
@@ -105,7 +108,7 @@ $hit-area: 4.4rem;
 
   &:hover {
     span {
-      @media all and (min-width: $narrow-screen + 1) {
+      @include media($narrow-screen + 1) {
         @include nav-border;
       }
     }
@@ -113,7 +116,7 @@ $hit-area: 4.4rem;
 
   &.sfgov-accordion-button {
     span {
-      @media all and (min-width: $narrow-screen + 1) {
+      @include media($narrow-screen + 1) {
         margin-right: 0;
         padding-right: 1.5rem;
       }
@@ -145,10 +148,10 @@ $hit-area: 4.4rem;
   overflow-y: auto;
   padding: 2rem;
   width: $sliding-panel-width;
-  @media screen and (max-width: $narrow-screen) {
+  @include media-max($narrow-screen) {
     z-index: $z-index-nav;
   }
-  @media all and (min-width: $narrow-screen + 1) {
+  @include media($narrow-screen + 1) {
     padding: 0;
     border-left: none;
     display: block;
@@ -158,17 +161,16 @@ $hit-area: 4.4rem;
     transform: translateX(0);
     width: auto;
   }
-
   &.is-visible {
     animation: slidein-right 0.3s ease-in-out;
     display: flex;
   }
 
   nav {
-    margin-top: 6rem; // XXX magic number
+    margin-top: 6rem;
     min-height: 100%;
 
-    @media all and (min-width: $narrow-screen + 1) {
+    @include media($narrow-screen + 1) {
       margin-top: 0;
     }
   }
@@ -179,7 +181,7 @@ $hit-area: 4.4rem;
     font-weight: $font-bold;
     padding-left: 1.4rem;
 
-    @media all and (min-width: $narrow-screen + 1) {
+    @include media($narrow-screen + 1) {
       color: $color-base;
     }
   }
@@ -189,7 +191,7 @@ $hit-area: 4.4rem;
   }
 
   .sfgov-search {
-    @media all and (min-width: $narrow-screen + 1) {
+    @include media($narrow-screen + 1) {
       margin-left: 1.5rem; // XXX magic number
       top: 4px;
     }
@@ -209,7 +211,7 @@ $hit-area: 4.4rem;
     color: currentColor;
   }
 
-  @media all and (min-width: $narrow-screen + 1) {
+  @include media($narrow-screen + 1) {
     display: none;
   }
 
@@ -227,14 +229,14 @@ $hit-area: 4.4rem;
 }
 
 .sfgov-mobile_nav-container {
-  @media all and (max-width: $narrow-screen) {
+  @include media-max($narrow-screen) {
     .sfgov-main-navigation {
       ul.menu {
         padding: 0;
         margin: 0;
         li {
           display: block;
-          border-bottom: 1px solid #323a44;
+          border-bottom: 1px solid $color-gray-dark;
           margin-right: 0;
           min-width: 231px;
           padding-left: 20px;

@@ -3,8 +3,8 @@
 
 .a-z-container {
   background-color: #E1F3F8;
-  padding: 20px 0;
-  @media all and (min-width: $narrow-screen) {
+  padding: 2rem 0;
+  @include media($narrow-screen) {
     padding: 42px 0 35px 0;
   }
   h1 {
@@ -17,6 +17,6 @@
     padding-left: 0;
   }
   .sfgov-tabbed-navigation ul li a {
-    padding: 12px 15px;
+    padding: 1.2rem 1.5rem;
   }
 }
