@@ -26,6 +26,9 @@
       width: 104px;
       height: auto;
       @include media($medium-screen + 1) {
+        width: 142px;
+      }
+      @include media($narrow-screen) {
         width: 100%;
       }
     }
