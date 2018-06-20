@@ -1,16 +1,22 @@
 @import "01-fonts.scss";
+@import "../../00-protons/00-breakpoints";
+@import "../../00-protons/01-grid";
 
 // we can place the styles in straight in the folder where the component belongs.
 
 @mixin sfgov-h1 {
   @include merriweather;
-  font-size: 40px;
-  line-height: 52px;
   margin: 0;
 }
 
 h1 {
+  font-size: 3rem;
+  line-height: 3.9rem;
   @include sfgov-h1;
+  @include media($medium-screen + 1) {
+    font-size: 4rem;
+    line-height: 5.2rem;
+  }
 }
 
 .sfgov-header-section {
