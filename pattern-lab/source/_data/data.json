@@ -304,5 +304,8 @@
       "title": "Information Status",
       "content": "Donec mollis hendrerit risus. Sed consequat, leo eget bibendum sodales, augue <a href=\"#\">velit cursus</a> nunc, quis gravida magna"
     }
-  ]
+  ],
+  "lorem": {
+    "long": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Vestibulum volutpat pretium libero. Integer tincidunt. Morbi mollis tellus ac sapien. In hac habitasse platea dictumst. \n Fusce fermentum odio nec arcu. Nam at tortor in tellus interdum sagittis. Ut id nisl quis enim dignissim sagittis. Cras dapibus. Proin sapien ipsum, porta a, auctor quis, euismod ut, mi."
+  }
 }

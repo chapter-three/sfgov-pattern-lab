@@ -1,5 +1,6 @@
 @import "../../../../node_modules/susy/sass/susy-prefix";
 @import "../../../../node_modules/susy/sass/plugins/svg-grid";
+@import "02-mixins";
 
 @mixin media($bp) {
   @media screen and (min-width: #{$bp}) {
@@ -21,6 +22,7 @@ $susy: (
 );
 
 @mixin sfgov-container-full {
+  @include clearfix;
   @media all and (min-width: $narrow-screen) {
     width: 949px;
     margin: 0 auto;
@@ -34,6 +36,7 @@ $susy: (
 }
 
 @mixin sfgov-container-full--no-padding() {
+  @include clearfix;
   @media all and (min-width: $narrow-screen) {
     width: 949px;
     margin: 0 auto;
@@ -45,6 +48,7 @@ $susy: (
 }
 
 .sfgov-container--full {
+  @include clearfix;
   @media all and (min-width: $narrow-screen) {
     width: 949px;
     margin: 0 auto;
@@ -146,7 +150,7 @@ $susy: (
   }
 }
 
-// Drupal specific styles:
+// Grid Two Columns.
 
 .sfgov-grid-two-columns {
   @include sfgov-container-full--no-padding;
@@ -163,4 +167,28 @@ $susy: (
   .transaction-card {
     height: 100%;
   }
+}
+
+// Right sidebar.
+
+.sfgov-container--right-sidebar {
+  .sfgov-container--content-right {
+    @include media($medium-screen + 1) {
+      width: susy-span(8 narrow of 12 narrow);
+      float: left;
+      @include clearfix;
+    }
+  }
+  .sfgov-container--content-left {
+    @include media($medium-screen + 1) {
+      width: susy-span(4 narrow of 12 narrow);
+      float: right;
+      @include clearfix;
+    }
+  }
+}
+
+// Preview.
+.preview {
+  @include clearfix;
 }
