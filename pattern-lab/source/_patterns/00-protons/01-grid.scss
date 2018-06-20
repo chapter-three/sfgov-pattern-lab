@@ -178,6 +178,10 @@ $susy: (
 // Right sidebar.
 
 .sfgov-container--right-sidebar {
+  padding: 0 0 5.2rem 0;
+  @include media($medium-screen + 1) {
+    padding: 5.2rem 0;
+  }
   .sfgov-container--content-right {
     @include media($medium-screen + 1) {
       width: susy-span(8 narrow of 12 narrow);
@@ -186,12 +190,23 @@ $susy: (
     }
   }
   .sfgov-container--content-left {
+
+    padding: 2.5rem 2.8rem 3.9rem 2.8rem;
+
     @include media($medium-screen + 1) {
       width: susy-span(4 narrow of 12 narrow);
       float: right;
       @include clearfix;
+      padding: 0;
     }
   }
+  .sidebar-block {
+    margin-bottom: 2.6rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
 }
 
 // Preview.
