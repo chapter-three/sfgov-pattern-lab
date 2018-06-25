@@ -12,9 +12,15 @@ $hit-area: 4.4rem;
 
 .sfgov-main-navigation {
   ul {
+    @include media($medium-screen + 1) {
+      padding-left: 40px;
+    }
     li {
       display: inline-block;
       margin-right: 40px;
+      @include media($medium-screen + 1) {
+        margin: 4px 40px 4px 0;
+      }
       a {
         @include source-sans-pro;
         font-size: 15px;
@@ -22,6 +28,12 @@ $hit-area: 4.4rem;
         line-height: 19px;
         font-weight: bold;
         text-decoration: none;
+        &:hover {
+          @include media($medium-screen + 1) {
+            border-bottom: 5px solid $color-blue-darker;
+            padding-bottom: 8px;
+          }
+        }
       }
     }
   }
