@@ -34,6 +34,9 @@
       }
       @include media($medium-screen) {
         display: inline-block;
+        &:first-child {
+          padding-left: 0;
+        }
       }
       padding: 15px 40px 15px 15px;
       margin-bottom: 0;
