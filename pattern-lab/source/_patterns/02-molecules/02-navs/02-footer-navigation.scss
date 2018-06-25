@@ -38,6 +38,11 @@
           padding-left: 0;
         }
       }
+      @media screen and (min-width: $medium-screen + 1) and (max-width: $narrow-screen) {
+        &:first-child {
+          padding-left: 17px;
+        }
+      }
       padding: 15px 40px 15px 15px;
       margin-bottom: 0;
       a {
