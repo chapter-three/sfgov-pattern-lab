@@ -14,6 +14,7 @@ $hit-area: 4.4rem;
   ul {
     @include media($medium-screen + 1) {
       padding-left: 40px;
+      margin: 25px 0 0 0;
     }
     li {
       display: inline-block;
