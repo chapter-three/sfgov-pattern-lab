@@ -34,21 +34,12 @@ $susy: (
     margin: 0 auto;
     padding: 0;
   }
-  @include media($wide-screen) {
-    width: 1195px;
-    margin: 0 auto;
-    padding: 0;
-  }
 }
 
 @mixin sfgov-container-full--no-padding() {
   @include clearfix;
   @include media($narrow-screen) {
     width: 949px;
-    margin: 0 auto;
-  }
-  @include media($wide-screen) {
-    width: 1195px;
     margin: 0 auto;
   }
 }
@@ -60,11 +51,6 @@ $susy: (
     margin: 0 auto;
     padding: 0;
   }
-  @include media($wide-screen) {
-    width: 1195px;
-    margin: 0 auto;
-    padding: 0;
-  }
 }
 
 .sfgov-container {
@@ -72,11 +58,6 @@ $susy: (
   padding-right: susy-gutter() / 2;
   @include media($narrow-screen) {
     width: 949px;
-    margin: 0 auto;
-    padding: 0;
-  }
-  @include media($wide-screen) {
-    width: 1195px;
     margin: 0 auto;
     padding: 0;
   }

@@ -32,3 +32,21 @@
     }
   }
 }
+
+// Responsive search form.
+
+.sfgov-responsive--search-form {
+  form.sfgov-search-form {
+    .form-item-keywork {
+      input[type="text"] {
+
+      }
+    }
+    .form-actions {
+      position: relative;
+      input[type="submit"] {
+        font-size: 0;
+      }
+    }
+  }
+}
