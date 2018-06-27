@@ -12,8 +12,6 @@ const uswds = require('./config');
 const components = require('./components');
 uswds.components = components;
 
-console.log(uswds)
-
 domready(() => {
   const target = document.body;
   for (let name in components) {
