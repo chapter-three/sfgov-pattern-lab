@@ -5,6 +5,9 @@
   .transaction-card {
     background-color: $color-gray-lightest;
     padding: 20px 18px 42px;
+    .transaction-card__title {
+      margin-top: 0;
+    }
     .transaction-card__body {
       color: $color-gray-dark;
     }
