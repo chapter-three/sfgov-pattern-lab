@@ -3,9 +3,7 @@
 
 .sfgov-new-website {
   background-color: $color-gray-lightest;
-  //padding: 12px susy-gutter()/2 35px;
   padding: 30px 20px;
-
   @include media($medium-screen){
     padding: 12px susy-span(1 wide of 12 wide) 70px;
   }
@@ -16,5 +14,6 @@
   }
   p:last-child {
     margin-bottom: 0;
+    color: $color-gray;
   }
 }
