@@ -22,5 +22,13 @@ h1 {
   color: #FFFFFF;
   background: #205493;
   padding: 5px 10px;
+  &.no-margin {
+    margin: 0;
+  }
+  &.big-padding {
+    @include media($narrow-screen) {
+      padding: 16px 0 15px 31px;
+    }
+  }
 }
 

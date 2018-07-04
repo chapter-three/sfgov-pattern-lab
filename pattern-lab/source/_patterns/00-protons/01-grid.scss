@@ -159,21 +159,28 @@ $susy: (
 // Right sidebar.
 
 .sfgov-container--right-sidebar {
-  padding: 0 0 5.2rem 0;
-  @include media($medium-screen + 1) {
-    padding: 5.2rem 0;
+  padding: 0;
+  @include media-max($medium-screen) {
+    display: flex;
+    flex-direction: column;
   }
-  .sfgov-container--content-right {
+  @include media($medium-screen + 1) {
+    padding: 45px 0;
+  }
+  .sfgov-container--content-left {
+    @include media-max($medium-screen) {
+      order: 2;
+    }
     @include media($medium-screen + 1) {
-      width: susy-span(8 narrow of 12 narrow);
+      width: susy-span(7.8 narrow of 12 narrow);
       float: left;
       @include clearfix;
     }
   }
-  .sfgov-container--content-left {
-
-    padding: 2.5rem 2.8rem 3.9rem 2.8rem;
-
+  .sfgov-container--content-right {
+    @include media-max($medium-screen) {
+      order: 1;
+    }
     @include media($medium-screen + 1) {
       width: susy-span(4 narrow of 12 narrow);
       float: right;
