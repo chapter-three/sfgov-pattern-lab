@@ -1,0 +1,28 @@
+<div class="department-search-index">
+  <div class="department-search-index--container">
+    {% if url %}
+      <a href="{{ url }}">
+    {% endif %}
+        <h3 class="title">
+          {{ title }}
+        </h3>
+    {% if url %}
+      </a>
+    {% endif %}
+    {% if body %}
+      <p class="body">{{ body }}</p>
+    {% endif %}
+    <div class="phone-address--container">
+      {% if phone %}
+        <div class="phone--container">
+          {{ phone }}
+        </div>
+      {% endif %}
+      {% if address %}
+        <div class="address--container">
+          {{ address }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
