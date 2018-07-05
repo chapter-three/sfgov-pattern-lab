@@ -1,0 +1,51 @@
+@import "../../00-protons/01-grid";
+@import "../../01-atoms/01-colors/01-colors.scss";
+
+.department-search-result {
+  padding: 40px 0 46px 0;
+  margin: 0 25px 0 25px;
+  border-bottom: 1px solid $color-gray-light;
+  .phone-address--container {
+    display: flex;
+    flex-direction: column;
+    @include media($medium-screen) {
+      flex-direction: row;
+    }
+    .address--container,
+    .phone--container {
+      display: flex;
+      flex-direction: row;
+      .phone,
+      .address {
+        line-height: 30px;
+        margin-left: 10px;
+      }
+    }
+    .phone--container {
+      margin-bottom: 10px;
+      @include media($medium-screen) {
+        min-width: 183px;
+        width: susy-span(2 narrow of 12 narrow);
+        margin-bottom: 0;
+      }
+    }
+    .address--container {
+      @include media($medium-screen) {
+        width: susy-span(9 narrow of 12 narrow);
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+  h3.title {
+    margin: 0 0 10px 0;
+  }
+  p.body {
+    margin: 0 0 10px 0;
+    color: $color-gray;
+    @include media($medium-screen) {
+      max-width: 566px;
+    }
+  }
+}
