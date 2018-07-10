@@ -6,7 +6,7 @@
   margin: 0 20px;
   border-bottom: 1px solid $color-gray-light;
   @include media($narrow-screen) {
-    padding: 30.5px 20px 20.5px 0;
+    padding: 30px 20px 30px 0;
     margin: 0;
   }
   a {
@@ -14,6 +14,7 @@
     h4 {
       margin-top: 0;
       margin-bottom: 5px;
+      font-size: 2rem;
     }
   }
   .body {
