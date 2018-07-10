@@ -19,6 +19,10 @@
     font-size: 17px;
     line-height: 26px;
   }
+  h3 {
+    margin-top: 0;
+    color: $color-blue-darker;
+  }
   h4.field__label {
     @include source-sans-pro;
     color: $color-gray-dark;
