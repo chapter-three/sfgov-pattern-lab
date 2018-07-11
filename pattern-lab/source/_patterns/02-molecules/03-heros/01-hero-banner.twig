@@ -2,7 +2,7 @@
   <div class="sfgov-banner__container sfgov-container">
     <h1>{{ banner.title }}</h1>
     {% if banner.text %}
-      <div class="lead-paragraph">{{ banner.text }}</div>
+      <h3 class="lead-paragraph">{{ banner.text }}</h3>
     {% endif %}
     {% if banner.date %}
       <time class="date">{{ banner.date|date('l, F d') }}</time>
