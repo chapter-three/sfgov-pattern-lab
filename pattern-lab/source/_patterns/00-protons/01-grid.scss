@@ -28,7 +28,7 @@ $susy: (
   @include media($narrow-screen) {
     width: 949px;
     margin: 0 auto;
-    padding: 0;
+    padding: 50px 0px 0px 0px;
   }
 }
 
@@ -161,7 +161,7 @@ $susy: (
     flex-direction: column;
   }
   @include media($medium-screen + 1) {
-    padding: 45px 0;
+    padding: 50px 0;
   }
   .sfgov-container--content-left {
     padding: 39px 25px 70px 25px;
