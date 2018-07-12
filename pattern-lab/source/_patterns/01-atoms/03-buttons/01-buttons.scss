@@ -358,5 +358,9 @@ button,
     text-align: center;
     text-decoration: none;
     width: auto;
+
+    &:visited {
+      color: $color-white;
+    }
   }
 }
