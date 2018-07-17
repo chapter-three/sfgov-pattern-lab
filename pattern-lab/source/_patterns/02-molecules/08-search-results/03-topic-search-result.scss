@@ -23,5 +23,18 @@
       color: $color-gray;
       line-height: 26px;
     }
+    .content-type {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 16px;
+      @include media($medium-screen) {
+        flex-direction: row;
+      }
+      span {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        padding: 3px 0 0 12px;
+      }
+    }
   }
 }

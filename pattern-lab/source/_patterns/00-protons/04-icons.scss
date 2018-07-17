@@ -32,3 +32,17 @@
     background-position: center;
   }
 }
+
+.sfgov-icon-filefilled {
+  &::before {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 24px;
+    background-image: url("../../images/icons/fileFilled.png");
+    background-image: url("../../images/icons/fileFilled.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
