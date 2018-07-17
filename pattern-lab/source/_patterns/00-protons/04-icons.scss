@@ -23,9 +23,12 @@
   &::before {
     content: '';
     display: block;
-    width: 29px;
-    height: 29px;
-    background: url("../../images/icons/department.png");
-    background: url("../../images/icons/department.svg") no-repeat;
+    width: 22px;
+    height: 24px;
+    background-image: url("../../images/icons/department.png");
+    background-image: url("../../images/icons/department.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }

@@ -8,6 +8,19 @@
     }
     padding: 30px 0 30px 0;
     border-bottom: 1px solid $color-gray-light;
+    .content-type {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 16px;
+      @include media($medium-screen) {
+        flex-direction: row;
+      }
+      span {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        padding: 3px 0 0 12px;
+      }
+    }
     .phone-address--container {
       display: flex;
       flex-direction: column;
