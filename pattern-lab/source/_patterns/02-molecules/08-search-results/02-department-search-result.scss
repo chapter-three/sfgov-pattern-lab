@@ -10,11 +10,8 @@
     border-bottom: 1px solid $color-gray-light;
     .content-type {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       margin-bottom: 16px;
-      @include media($medium-screen) {
-        flex-direction: row;
-      }
       span {
         font-size: 1.4rem;
         text-transform: uppercase;
@@ -63,6 +60,15 @@
       color: $color-gray;
       @include media($medium-screen) {
         max-width: 566px;
+      }
+    }
+    @include media-max($mobile-screen) {
+      margin: 0 25px;
+      padding: 25px 0;
+      a {
+        h3 {
+          font-size: 1.7rem;
+        }
       }
     }
   }
