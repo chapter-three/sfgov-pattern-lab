@@ -29,7 +29,7 @@
     }
     @include clearfix;
   }
-  @include media-max($mobile-screen) {
+  @include media-max($narrow-screen) {
     margin: 0 25px;
     padding: 25px 0;
     a {
