@@ -142,7 +142,7 @@ $susy: (
   grid-template-columns: repeat(1, 1fr);
   @include media($narrow-screen) {
     grid-template-columns: repeat(2, 1fr);
-    padding: 41px 0 21px 0;
+    padding: 0;
   }
   grid-template-rows: auto;
   grid-gap: 20px 20px;

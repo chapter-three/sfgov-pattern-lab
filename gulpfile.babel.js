@@ -83,6 +83,7 @@ gulp.task('pl:css', () => {
 gulp.task('watch', function () {
     gulp.watch(config.js.src, ['legacy:js']);
     gulp.watch(config.css.src, ['pl:css']);
+    gulp.watch(config.css.src, ['pl:js']);
     gulp.watch(config.pattern_lab.src, ['generate:pl']);
     gulp.watch(config.pattern_lab.javascript.src, ['generate:pl']);
 });
