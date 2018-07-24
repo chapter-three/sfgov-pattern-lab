@@ -1,0 +1,35 @@
+@import "../../01-atoms/01-colors/01-colors";
+@import "../../01-atoms/02-typography/01-fonts.scss";
+
+.sfgov-container--content-right {
+  background-color: $color-gray-lightest;
+  position: relative;
+  margin: 0px 0px 30px;
+  .sfgov-sidebar-container {
+    padding: 25px;
+    .field {
+      &:last-child {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  p {
+    margin: 0;
+    padding: 0;
+    color: $color-gray;
+    font-size: 17px;
+    line-height: 26px;
+  }
+  h3 {
+    margin-top: 0;
+    color: $color-blue-darker;
+  }
+  h4.field__label {
+    @include source-sans-pro;
+    color: $color-gray-dark;
+    font-weight: 600; // semi-bold
+    font-size: 20px;
+    line-height: 26px;
+    margin-top: 0;
+  }
+}

@@ -11,16 +11,11 @@ import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import autoprefix from 'gulp-autoprefixer';
 import glob from 'gulp-sass-glob';
-import rename from 'gulp-rename';
 import sourcemaps from 'gulp-sourcemaps';
 import shell from 'gulp-shell';
 import concat from 'gulp-concat';
-import uglify from 'gulp-uglify';
 import babel from 'gulp-babel';
-import fancylog from 'fancy-log';
-import browserify from 'browserify';
-import source from 'vinyl-source-stream';
-import buffer from 'vinyl-buffer';
+import imagemin from 'gulp-imagemin';
 
 // Require a copy of the JS compiler for uswds.
 // the gulptask is called "javascript"
@@ -54,10 +49,9 @@ let errorHandler = (error) => {
     this.emit('end');
 };
 
-// CSS.
+// Pattern Lab CSS.
 // -------------------------------------------------------------- //
-
-gulp.task('css', () => {
+gulp.task('pl:css', () => {
     return gulp.src(config.css.src)
         .pipe(glob())
         .pipe(plumber({
@@ -84,60 +78,40 @@ gulp.task('css', () => {
         .pipe(browserSync.reload({stream: true, match: '**/*.css'}));
 });
 
-// Pattern lab CSS.
-// ----------------------------------------------------------------- //
-// Search for changes inside the pattern-lab/source/_patterns folders
-// the scss processor is going to compile scss files inside the components folders.
-// ----------------------------------------------------------------- //
-
-gulp.task('pl:scss', () => {
-    return gulp.src(config.css.src, {base: './'})
-        .pipe(glob())
-        .pipe(plumber({
-            errorHandler: function (error) {
-                notify.onError({
-                    title: "Gulp",
-                    subtitle: "Failure!",
-                    message: "Error: <%= error.message %>",
-                    sound: "Beep"
-                })(error);
-                this.emit('end');
-            }
-        }))
-        .pipe(sourcemaps.init())
-        .pipe(sass(config.sass))
-        .pipe(autoprefix(config.autoprefixer))
-        .pipe(rename(function (path) {
-            path.dirname = path.dirname.replace(/src/i, 'dist');
-            return path;
-        }))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('.'))
-        .pipe(browserSync.reload({stream: true, match: '**/*.css'}));
+gulp.task('pl:imagemin', () => {
+    return gulp.src(config.images.src)
+        .pipe(imagemin())
+        .pipe(gulp.dest('./dist/images'))
 });
 
 // Watch task.
 // ------------------------------------------------------------------- //
 
 gulp.task('watch', function () {
-    gulp.watch(config.css.src, ['pl:generate']);
-    gulp.watch(config.pattern_lab.src, ['pl:generate']);
-    gulp.watch(config.pattern_lab.javascript.src, ['pl:generate']);
+    gulp.watch(config.js.src, ['legacy:js']);
+    gulp.watch(config.css.src, ['pl:css']);
+    gulp.watch(config.css.src, ['pl:js']);
+    gulp.watch(config.pattern_lab.src, ['generate:pl']);
+    gulp.watch(config.pattern_lab.javascript.src, ['generate:pl']);
+    gulp.watch(config.images.src, ['pl:imagemin']);
 });
 
 // Static Server + Watch.
 // ------------------------------------------------------------------- //
 
-gulp.task('serve', ['pl:generate', 'watch'], () => {
+gulp.task('serve', ['watch', 'generate:pl'], () => {
     browserSync.init({
         serveStatic: ['./pattern-lab/public']
     });
 });
 
+// generate Pattern library.
+gulp.task('generate:pl', ['pl:php', 'legacy:js', 'pl:css', 'pl:js', 'pl:imagemin']);
+
 // Generate pl with PHP.
 // -------------------------------------------------------------------- //
 
-gulp.task('pl:generate', ['uswds:javascript', 'css', 'js:components'], () => shell.task('php pattern-lab/core/console --generate'));
+gulp.task('pl:php', shell.task('php pattern-lab/core/console --generate'));
 
 // Component JS.
 // -------------------------------------------------------------------- //
@@ -145,7 +119,7 @@ gulp.task('pl:generate', ['uswds:javascript', 'css', 'js:components'], () => she
 // _patterns folder, if new patterns need to be added the config.json array
 // needs to be edited to watch for more folders.
 
-gulp.task('js:components', () => {
+gulp.task('pl:js', () => {
     return gulp.src(config.pattern_lab.javascript.src)
         .pipe(sourcemaps.init())
         .pipe(babel({

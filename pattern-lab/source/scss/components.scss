@@ -1,7 +1,5 @@
 // Import dependencies for USWDS.
 
-
-
 // Vendor -------------- //
 @import '../../../node_modules/uswds/src/stylesheets/core/variables-vendor';
 // instead of @import 'lib/bourbon'; the following:
@@ -21,8 +19,6 @@ $helvetica: 'Helvetica', sans-serif;
 $georgia: 'Georgia', sans-serif;
 
 @import '../../../node_modules/uswds/src/stylesheets/core/variables';
-//@import '../../../node_modules/uswds/src/stylesheets/core/fonts';
-@import '../../../node_modules/uswds/src/stylesheets/core/grid';
 @import '../../../node_modules/uswds/src/stylesheets/core/utilities';
 @import '../../../node_modules/uswds/src/stylesheets/core/base';
 
@@ -39,7 +35,6 @@ $georgia: 'Georgia', sans-serif;
 
 // Components -------------- //
 @import '../../../node_modules/uswds/src/stylesheets/components/accordions';
-@import '../../../node_modules/uswds/src/stylesheets/components/alerts';
 @import '../../../node_modules/uswds/src/stylesheets/components/banner';
 @import '../../../node_modules/uswds/src/stylesheets/components/footer';
 @import '../../../node_modules/uswds/src/stylesheets/components/forms';
@@ -48,7 +43,6 @@ $georgia: 'Georgia', sans-serif;
 @import '../../../node_modules/uswds/src/stylesheets/components/hero';
 @import '../../../node_modules/uswds/src/stylesheets/components/layout';
 @import '../../../node_modules/uswds/src/stylesheets/components/media-block';
-@import '../../../node_modules/uswds/src/stylesheets/components/navigation';
 @import '../../../node_modules/uswds/src/stylesheets/components/search';
 @import '../../../node_modules/uswds/src/stylesheets/components/section';
 @import '../../../node_modules/uswds/src/stylesheets/components/sidenav';
@@ -62,4 +56,5 @@ $georgia: 'Georgia', sans-serif;
 @import "../_patterns/03-organisms/**/*.scss";
 @import "../_patterns/04-templates/**/*.scss";
 @import "../_patterns/05-pages/**/*.scss";
+
 

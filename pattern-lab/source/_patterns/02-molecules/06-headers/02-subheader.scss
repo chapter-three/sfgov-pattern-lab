@@ -1,0 +1,14 @@
+@import '../../01-atoms/01-colors/01-colors';
+
+.sfgov-subheader {
+  background: $color-gray-lightest;
+  padding: 40px 0;
+
+  h4 {
+    margin-top: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}

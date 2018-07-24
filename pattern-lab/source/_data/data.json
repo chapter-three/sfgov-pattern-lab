@@ -1,4 +1,5 @@
 {
+  "pattern_lab_demo": true,
   "pl_test_content": true,
   "branding_url": "/",
   "branding_pre_title": "City & County of",
@@ -6,6 +7,10 @@
   "branding_logo_url": "../../images/sf-logo.svg",
   "branding_logo_alt": "alt text",
   "alpha_banner_message": "This site is in progress. Visit <a href=\"#\">sfgov.org</a> for the current.",
+  "blocks": {
+    "head_text": "This is a new website for San Francisco",
+    "body_text": "Do you have ideas or feedback on the new website? It's still in progress, and we'd love to know how we can make it better. <a href=\"#\">Learn more about the website project</a>"
+  },
   "main_navigation": [
     {
       "label": "Services",
@@ -16,15 +21,28 @@
       "link": "#"
     }
   ],
-  "homepage": {
-    "hero_banners": [
-      {
-        "title": "City and County of San Francisco",
-        "text": "Your guide to city information and services",
-        "date": "10250045"
-      }
-    ]
-
+  "tabbed_navigation": [
+    {
+      "label": "View",
+      "link": "#"
+    },
+    {
+      "label": "Edit",
+      "link": "#"
+    },
+    {
+      "label": "Delete",
+      "link": "#"
+    },
+    {
+      "label": "Revisions",
+      "link": "#"
+    }
+  ],
+  "banner": {
+    "title": "City and County of San Francisco",
+    "text": "Your guide to city information and services",
+    "date": "10250045"
   },
   "footer": {
     "image_url": "../../images/sf-logo-white.svg",
@@ -257,5 +275,38 @@
     "long": "20",
     "short": "20"
   },
-  "seconds": "31"
+  "seconds": "31",
+  "transaction_card": {
+    "title": "Affordable Housing",
+    "body": "Donec mollis hendrerit risus. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Donec id justo. Pellentesque posuere."
+  },
+  "alerts": [
+    {
+      "type": "success",
+      "role": "alertdialog",
+      "title": "Success Status",
+      "content": "Donec mollis hendrerit risus. Sed consequat, leo eget bibendum sodales, augue <a href=\"#\">velit cursus</a> nunc, quis gravida magna"
+    },
+    {
+      "type": "warning",
+      "role": "alertdialog",
+      "title": "Warning Status",
+      "content": "Donec mollis hendrerit risus. Sed consequat, leo eget bibendum sodales, augue <a href=\"#\">velit cursus</a> nunc, quis gravida magna"
+    },
+    {
+      "type": "error",
+      "role": "alertdialog",
+      "title": "Error Status",
+      "content": "Donec mollis hendrerit risus. Sed consequat, leo eget bibendum sodales, augue <a href=\"#\">velit cursus</a> nunc, quis gravida magna"
+    },
+    {
+      "type": "info",
+      "role": "alertdialog",
+      "title": "Information Status",
+      "content": "Donec mollis hendrerit risus. Sed consequat, leo eget bibendum sodales, augue <a href=\"#\">velit cursus</a> nunc, quis gravida magna"
+    }
+  ],
+  "lorem": {
+    "long": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Vestibulum volutpat pretium libero. Integer tincidunt. Morbi mollis tellus ac sapien. In hac habitasse platea dictumst. \n Fusce fermentum odio nec arcu. Nam at tortor in tellus interdum sagittis. Ut id nisl quis enim dignissim sagittis. Cras dapibus. Proin sapien ipsum, porta a, auctor quis, euismod ut, mi."
+  }
 }

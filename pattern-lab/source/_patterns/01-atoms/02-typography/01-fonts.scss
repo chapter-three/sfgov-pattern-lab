@@ -1,3 +1,5 @@
+@import "../../00-protons/01-grid";
+@import "../../01-atoms/01-colors/01-colors.scss";
 
 @mixin source-sans-pro {
   font-family: "Source Sans Pro", sans-serif;
@@ -35,7 +37,14 @@
   @include merriweather;
   font-size: 20px;
   line-height: 34px;
-  color: #205493;
+  color: $color-primary-darker;
 }
 
+a:visited {
+  color: $color-blue;
+}
+
+a:hover {
+  color: $color-blue-darker;
+}
 

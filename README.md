@@ -23,6 +23,13 @@
 
 `$ composer install`
 
+  answer the questions asked:
+  
+  - the path ./public/ already exists. merge or replace with the contents of pattern-lab/styleguidekit-assets-default package? `M`
+  - update the config option styleguideKitPath? `n`
+
+`$ php pattern-lab/core/console --generate`
+
 `$ npm install`
 
 ### Generate Pattern Lab public instance.
@@ -50,7 +57,12 @@ just run:
 - browserSync script tag added to `pattern-lab/source/_meta/00-head.twig`
 - link stylesheet from google Fonts added to `pattern-lab/source/_meta/00-head.twig`
 
+## Images folder.
+
+- All content inside `source/images` get's copied by Pattern Lab into `public/images`, if you place images in this last location, they might get lost on the next Pattern Lab site generation.
+
 # TODO:
 
 - replace bourbon neat with something similar to css grid, like susy3.
 - implement JS atomic arrangement and compilation.
+
