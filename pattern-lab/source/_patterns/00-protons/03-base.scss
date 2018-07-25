@@ -1,0 +1,11 @@
+@import '02-mixins';
+
+.visually-hidden {
+  @include visually-hidden;
+
+  &.focusable {
+    @include visually-hidden-focusable;
+  }
+}
+
+

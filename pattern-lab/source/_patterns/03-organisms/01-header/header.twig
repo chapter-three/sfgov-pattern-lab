@@ -1,11 +1,15 @@
-<header class="usa-header usa-header-basic" role="banner">
-  <div class="usa-nav-container sfgov-nav-container">
+<header role="banner">
+  <div class="sfgov-container--full sfgov-nav-container">
     <div class="sfgov-nav-container__content">
-      {% include "molecules-branding" %}
+      <button class="sfgov-menu-btn">Menu</button>
+      {{ header_blocks }}
+      <div class="head-right--container">
+        {{ translate_block }}
+      </div>
       {% if pl_test_content %}
+        {% include "molecules-branding" %}
         {% include "molecules-main-navigation" %}
       {% endif %}
-      {{ header_blocks }}
     </div>
   </div>
 </header>

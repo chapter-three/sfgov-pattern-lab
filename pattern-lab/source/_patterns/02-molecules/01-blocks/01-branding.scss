@@ -1,31 +1,65 @@
+@import "../../01-atoms/01-colors/01-colors.scss";
 @import "../../01-atoms/02-typography/01-fonts.scss";
+@import "../../00-protons/01-grid";
 
-.sfgov-logo {
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: no-wrap;
-  align-items: stretch;
-  .sfgov-logo__text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 14px;
-    .sfgov-logo__text--pre-title {
-      font-family: "Helvetica", sans-serif;
-      font-size: 10px;
-      line-height: 12px;
-      // todo: replace this color with a variable.
-      color: #212121;
+.branding-link {
+  text-decoration: none;
+  color: $color-black-light;
+}
+
+.sfgov-logo__container {
+  @include media($narrow-screen) {
+    padding: 12px 0;
+  }
+  .sfgov-logo {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+    align-items: stretch;
+    margin-top: 3px;
+    @include media($narrow-screen) {
+      margin-top: 0;
     }
-    .sfgov-logo__text--title {
-      @include merriweather;
-      font-size: 20px;
-      font-weight: bold;
-      line-height: 26px;
-      a {
+    .sfgov-logo__image {
+      min-width: 55px;
+      display: flex;
+      align-content: center;
+      @include media($narrow-screen) {
+        min-width: 40px;
+        img {
+          max-width: 40px;
+        }
+      }
+    }
+    .sfgov-logo__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 14px;
+      min-width: 95px;
+      @include media($narrow-screen) {
+        position: relative;
+        top: 4px;
+      }
+      position: relative;
+      top: 4px;
+      .sfgov-logo__text--pre-title {
+        font-family: "Helvetica", sans-serif;
+        font-size: 10px;
+        line-height: 12px;
+        color: $color-black-light;
+      }
+      .sfgov-logo__text--title {
+        @include merriweather;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 26px;
         text-decoration: none;
-        color: #212121;
+        color: $color-black-light;
       }
     }
   }
 }
+
+
+
